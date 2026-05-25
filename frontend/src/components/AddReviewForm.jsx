@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddReviewForm = ({
   companyId,
@@ -41,6 +43,7 @@ const AddReviewForm = ({
           ...formData,
         }
       );
+      toast.success("Review added successfully!");
 
       refreshReviews();
       closeModal();

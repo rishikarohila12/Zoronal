@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AddReviewForm from "./AddReviewForm";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ReviewList = ({ companyId, company }) => {
 
@@ -100,7 +102,7 @@ const ReviewList = ({ companyId, company }) => {
 
       await navigator.clipboard.writeText(window.location.href);
 
-      alert("Link copied successfully!");
+      toast.success("Link copied successfully!");
 
     } catch (error) {
 
