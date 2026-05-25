@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import axios from "axios";
 
 const AddCompanyModal = ({ closeModal, refreshData }) => {
@@ -22,7 +23,7 @@ const AddCompanyModal = ({ closeModal, refreshData }) => {
     try {
       await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/companies`, formData);
       
-
+toast.success("Company added successfully!");
       refreshData();
       closeModal();
     } catch (error) {
