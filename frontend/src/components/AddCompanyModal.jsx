@@ -28,7 +28,7 @@ toast.success("Company added successfully!");
       closeModal();
     } catch (error) {
       console.log(error);
-      alert("Error adding company");
+      toast.error("Failed to add company");
     }
   };
 
